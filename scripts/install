@@ -7,25 +7,6 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-### Install parameters are automatically saved as settings
-###
-### Settings are automatically loaded as bash variables
-### in every app script context, therefore typically these will exist:
-### - $domain
-### - $path
-### - $language
-### ... etc
-###
-### Resources defined in the manifest are provisioned prior to this script
-### and corresponding settings are also available, such as:
-### - $install_dir
-### - $port
-### - $db_name
-### ...
-###
-### $app is the app id (i.e. 'example' for first install,
-### or 'example__2', '__3'... for multi-instance installs)
-
 #=================================================
 # INITIALIZE AND STORE SETTINGS
 #=================================================
@@ -34,6 +15,13 @@ source /usr/share/yunohost/helpers
 # (or remove this section entirely if not relevant for you)
 foo="bar"
 ynh_app_setting_set --key=foo --value=$foo
+
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Installing dependencies..."
+
+ynh_setup_source --dest_dir="$install_dir/jdk" --source_id="jdk"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE

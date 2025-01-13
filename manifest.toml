@@ -54,17 +54,32 @@ ram.runtime = "50M"
 
     [resources.sources]
 
-    [resources.sources.server]
-    url = "https://github.com/MDeLuise/plant-it/releases/download/0.9.0/server.jar"
-    sha256 = ""
+    [resources.sources.backend]
+    url = "https://github.com/MDeLuise/plant-it/releases/download/0.10.0/server.jar"
+    sha256 = "445fb2f85455f48106a3bf5c696f17feb31414745a80efa26ffd735b42d244c2"
 
-    autoupdate.strategy = "latest_github_tag"
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset = "server.jar"
 
-    [resources.sources.client]
+    [resources.sources.frontend]
     url = "https://github.com/MDeLuise/plant-it/releases/download/0.9.0/client.tar.gz"
-    sha256 = ""
+    sha256 = "fd91d8aec279ded9868042524a9d84914d90938770d035ad1ee9d440ea62452b"
 
-    autoupdate.strategy = "latest_github_tag"
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset = "client.tar.gz"
+
+
+    [resources.sources.jdk]
+    amd64.url = "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_x64_linux_hotspot_21.0.5_11.tar.gz"
+    amd64.sha256 = "3c654d98404c073b8a7e66bffb27f4ae3e7ede47d13284c132d40a83144bfd8c"
+    arm64.url = "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.5_11.tar.gz"
+    arm64.sha256 = "6482639ed9fd22aa2e704cc366848b1b3e1586d2bf1213869c43e80bca58fe5c"
+    
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.version_regex = "jdk-(\\d+\\.\\d+\\.\\d+)\\+(.*)"
+    autoupdate.upstream = "https://github.com/adoptium/temurin21-binaries"
+    autoupdate.asset.amd64 = "OpenJDK.*-jdk_x64_linux_hotspot_.*\\.tar\\.gz$"
+    autoupdate.asset.arm64 = "OpenJDK.*-jdk_aarch64_linux_hotspot_.*\\.tar\\.gz$"
 
     [resources.system_user]
 
