@@ -100,8 +100,5 @@ ram.runtime = "50M"
     main.backend = "8080"
     main.frontend = "3000"
 
-    [resources.apt]
-    packages = "mariadb-server, deb1, deb2, php8.0-foo, php8.0-bar"
-
     [resources.database]
     type = "mysql"
