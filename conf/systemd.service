@@ -9,7 +9,7 @@ User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/jdk/bin/java -jar server.jar
-StandardOutput=append:/var/log/__APP__/__APP__-api.log
+StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 Environment=JAVA_HOME="__INSTALL_DIR__/jdk"
 

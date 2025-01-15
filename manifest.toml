@@ -36,19 +36,9 @@ ram.runtime = "50M"
     [install.domain]
     type = "domain"
 
-    [install.path]
-    type = "path"
-    default = "/example"
-
     [install.init_main_permission]
     type = "group"
     default = "visitors"
-
-    [install.admin]
-    type = "user"
-
-    [install.password]
-    type = "password"
 
     [install.floracodex_api_key]
     ask.en = "(Optional) Insert here the api key from the FLORACODEX api key"
