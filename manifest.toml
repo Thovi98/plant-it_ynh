@@ -98,8 +98,8 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.ports]
-    main.backend = "8080"
-    main.frontend = "3000"
+    backend.default = "8080"
+    frontend.default = "3000"
 
     [resources.database]
     type = "mysql"
