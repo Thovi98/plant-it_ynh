@@ -60,13 +60,6 @@ ram.runtime = "50M"
 
     [resources.sources]
 
-    [resources.sources.backend]
-    url = "https://github.com/MDeLuise/plant-it/releases/download/0.10.0/server.jar"
-    sha256 = "445fb2f85455f48106a3bf5c696f17feb31414745a80efa26ffd735b42d244c2"
-
-    autoupdate.strategy = "latest_github_release"
-    autoupdate.asset = "server.jar"
-
     [resources.sources.frontend]
     url = "https://github.com/MDeLuise/plant-it/releases/download/0.10.0/client.tar.gz"
     sha256 = "7df35332b1f36a55b27488d84bd0a885707edf7c472bcc3a098031d206739aae"
@@ -74,6 +67,12 @@ ram.runtime = "50M"
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "client.tar.gz"
 
+    [resources.sources.backend]
+    url = "https://github.com/MDeLuise/plant-it/releases/download/0.10.0/server.jar"
+    sha256 = "445fb2f85455f48106a3bf5c696f17feb31414745a80efa26ffd735b42d244c2"
+
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset = "server.jar"
 
     [resources.sources.jdk]
     amd64.url = "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_x64_linux_hotspot_21.0.5_11.tar.gz"

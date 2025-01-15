@@ -18,8 +18,8 @@ ynh_script_progression --message="Installing dependencies..."
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-ynh_setup_source --dest_dir="$install_dir/" --source_id="backend"
 ynh_setup_source --dest_dir="$install_dir/" --source_id="frontend"
+ynh_setup_source --dest_dir="$install_dir/backend" --source_id="backend"
 ynh_setup_source --dest_dir="$install_dir/jdk" --source_id="jdk"
 
 chown -R "$app:$app" "$install_dir"
