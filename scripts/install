@@ -7,13 +7,17 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
+# Retrieve YunoHost main domain for mails to work
+main_domain=$(cat /etc/yunohost/current_host)
+ynh_app_setting_set --key=main_domain --value=$main_domain
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-ynh_setup_source --dest_dir="$install_dir/" --source_id="frontend"
-ynh_setup_source --dest_dir="$install_dir/backend" --source_id="backend"
+ynh_setup_source --dest_dir="$install_dir" --source_id="frontend"
+ynh_setup_source --dest_dir="$install_dir" --source_id="backend"
 ynh_setup_source --dest_dir="$install_dir/jdk" --source_id="jdk"
 
 chown -R "$app:$app" "$install_dir"
