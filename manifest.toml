@@ -61,6 +61,7 @@ ram.runtime = "50M"
     url = "https://github.com/MDeLuise/plant-it/releases/download/0.10.0/server.jar"
     sha256 = "445fb2f85455f48106a3bf5c696f17feb31414745a80efa26ffd735b42d244c2"
     extract = false
+    rename = "server.jar"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "server.jar"
