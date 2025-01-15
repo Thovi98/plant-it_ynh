@@ -1,19 +1,21 @@
 [Unit]
-Description=Small description of the service
+Description=Plant-It service
 After=network.target
+After=postgresql.service
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/script
-StandardOutput=append:/var/log/__APP__/__APP__.log
+WorkingDirectory=__INSTALL_DIR__
+ExecStart=__INSTALL_DIR__/jdk/bin/java -jar server.jar
+StandardOutput=append:/var/log/__APP__/__APP__-api.log
 StandardError=inherit
+Environment=JAVA_HOME="__INSTALL_DIR__/jdk"
 
-### Depending on specificities of your service/app, you may need to tweak these
-### .. but this should be a good baseline
 # Sandboxing options to harden security
+# Depending on specificities of your service/app, you may need to tweak these
+# .. but this should be a good baseline
 # Details for these options: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
 NoNewPrivileges=yes
 PrivateTmp=yes

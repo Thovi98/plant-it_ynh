@@ -50,6 +50,12 @@ ram.runtime = "50M"
     [install.password]
     type = "password"
 
+    [install.floracodex_api_key]
+    ask.en = "(Optional) Insert here the api key from the FLORACODEX api key"
+    type = "string"
+    default = false
+    optional = true
+
 [resources]
 
     [resources.sources]
@@ -62,8 +68,8 @@ ram.runtime = "50M"
     autoupdate.asset = "server.jar"
 
     [resources.sources.frontend]
-    url = "https://github.com/MDeLuise/plant-it/releases/download/0.9.0/client.tar.gz"
-    sha256 = "fd91d8aec279ded9868042524a9d84914d90938770d035ad1ee9d440ea62452b"
+    url = "https://github.com/MDeLuise/plant-it/releases/download/0.10.0/client.tar.gz"
+    sha256 = "7df35332b1f36a55b27488d84bd0a885707edf7c472bcc3a098031d206739aae"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "client.tar.gz"
